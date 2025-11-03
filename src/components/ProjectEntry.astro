@@ -1,0 +1,35 @@
+---
+import { siteConfig } from "../config";
+
+const { project } = Astro.props;
+---
+
+<section id="project" class="p-8 sm:p-12 md:p-16 lg:p-24 bg-[#1d1c1f]">
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 items-start">
+      <div class="lg:col-span-4">
+        <h2
+          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-300"
+        >
+          {project.name}
+        </h2>
+        <div
+          class="w-[75px] h-[5px] mt-2 rounded-full"
+          style={`background-color: ${siteConfig.accentColor}`}
+        >
+        </div>
+      </div>
+
+      <div class="lg:col-span-8 space-y-8">
+        <img
+	  src={project.image1}
+	  alt={`${project.name} image 1`}
+	  class="w-3/4 mx-auto rounded-2xl shadow-lg obejct-cover scale-95"
+	/>
+	<br>
+        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-400 whitespace-pre-line">
+          {project.p1}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

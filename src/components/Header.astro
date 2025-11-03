@@ -4,6 +4,8 @@ import { siteConfig } from "../config";
 const hasProjects = siteConfig.projects && siteConfig.projects.length > 0;
 const hasExperience = siteConfig.experience && siteConfig.experience.length > 0;
 const hasEducation = siteConfig.education && siteConfig.education.length > 0;
+
+const notHomePage = Astro.props.notHome;
 ---
 
 <header
@@ -12,9 +14,21 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
 >
   <nav class="max-w-7xl mx-auto px-8 py-4">
     <ul class="flex items-center gap-8 justify-center">
+      {
+        notHomePage && (
+          <li>
+            <a
+              href="/portfolio"
+              class="text-gray-500 hover:text-white transition-colors font-medium"
+            >
+              Home
+            </a>
+          </li>
+        )
+      }
       <li>
         <a
-          href="#about"
+          href="/portfolio#about"
           class="text-gray-500 hover:text-white transition-colors font-medium"
         >
           About
@@ -24,7 +38,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
         hasProjects && (
           <li>
             <a
-              href="#projects"
+              href="/portfolio#projects"
               class="text-gray-500 hover:text-white transition-colors font-medium"
             >
               Projects
@@ -36,7 +50,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
         hasExperience && (
           <li>
             <a
-              href="#experience"
+              href="/portfolio#experience"
               class="text-gray-500 hover:text-white transition-colors font-medium"
             >
               Experience
@@ -48,7 +62,7 @@ const hasEducation = siteConfig.education && siteConfig.education.length > 0;
         hasEducation && (
           <li>
             <a
-              href="#education"
+              href="/portfolio#education"
               class="text-gray-500 hover:text-white transition-colors font-medium"
             >
               Education
