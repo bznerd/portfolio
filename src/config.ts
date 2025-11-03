@@ -37,7 +37,7 @@ export const siteConfig = {
       id: "game-of-life",
       name: "Conway's Game of Life",
       description:
-        "Conway's Game of Life is a simple cellular automata. In this project I implemented the game in python as an exercise is learning GUI programming and game engine design paradigms",
+        "Conway's Game of Life is a simple cellular automata. In this project I implemented the game in python as an exercise in learning GUI programming and game engine design paradigms",
       skills: ["Python", "tkinter", "numpy"],
       p1: "I created this project as an exercise in learning GUI programming. The simulation is Conway’s Game Of Life (fun fact: he hated that this is what he was known for), a simple cellular automata. My implementation separates the game logic and rendering into two separate threads. This separation keeps the UI responsive even if the game logic bogs down under really high cell counts.\n\nThere are two game logic backends, one with a fixed size grid and another with a dynamic list of living cells. For small patterns the fixed grid implementation runs faster than the dynamic list approach due to the lower overhead of checking for neighboring cells in the matrix instead of searching the list. The dynamic list approach allows an infinite game board and avoids the chrome levels of memory hogging a large fixed grid brings. The code is almost entirely native python with numpy as the only dependency.",
       image1: "/portfolio/game_of_life.gif",
